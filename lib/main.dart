@@ -3,7 +3,9 @@ import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -29,18 +31,20 @@ class _MyHomePageState extends State<MyHomePage> {
   final PageController pageController = PageController();
 
   final List<GalleryExampleItem> galleryItems = <GalleryExampleItem>[
-    GalleryExampleItem(
-      id: "tag1",
-      imageUrl: "assets/gallery1.jpg",
-    ),
-    GalleryExampleItem(
-      id: "tag3",
-      imageUrl: "assets/gallery2.jpg",
-    ),
-    GalleryExampleItem(
-      id: "tag4",
-      imageUrl: "assets/gallery3.jpg",
-    ),
+    /// `Add here new photos like below`
+
+    /// ` GalleryExampleItem(     `
+    /// `   id: "tag1",            <- This is for hero tag     `
+    /// `   imageUrl: "assets/gallery1.jpg",           <- This is where you put the path of your asset photo     `
+    /// ` ),     `
+    /// ` GalleryExampleItem(     `
+    /// `   id: "tag3",     `
+    /// `   imageUrl: "assets/gallery2.jpg",     `
+    /// ` ),     `
+    /// ` GalleryExampleItem(     `
+    /// `   id: "tag4",     `
+    /// `   imageUrl: "assets/gallery3.jpg",     `
+    /// ` ),`
   ];
 
   @override
@@ -55,6 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
           scrollPhysics: const BouncingScrollPhysics(),
           builder: (BuildContext context, int index) {
             return PhotoViewGalleryPageOptions(
+              /// `If the photos will be from internet, you'll change the *AssetImage* to *NetworkImage*`
+
               imageProvider: AssetImage(
                 galleryItems[index].imageUrl,
               ),
